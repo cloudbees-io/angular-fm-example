@@ -7,26 +7,24 @@ The application shows how your Angular application can respond live to changes i
 
 Every application using CloudBees Feature Management needs to be configured with an SDK Key that connects it to your Flags & configurations in the [CloudBees Platform](https://cloudbees.io/).
 You can retrieve your SDK Key for a particular Environment by visiting _Feature Management -> Installation_.
-Then, replace the placeholder in `src/main/resources/application.yaml` with your SDK Key:
+Then, replace the placeholder in `src/app/app.component.ts` with your SDK Key:
 
-`rox:
-    key: "<INSERT YOUR SDK KEY HERE>"`
+`sdkKey = '<INSERT YOUR SDK KEY HERE>'`
 
 For example:
 
-`rox:
-    key: "<INSERT YOUR SDK KEY HERE>"`
+`sdkKey = '208a0245-b6d6-4fd0-7fe6-bc7bef510341'`
 
 ## Run the application
 
 Using your favourite package manager:
 ```
-gradle bootRun
+ng serve
 ```
 
 ...then visit the URL:
 
-`http://localhost:8080/api/demo`
+`http://localhost:4200`
 
 ## Feature flags
 
@@ -58,7 +56,10 @@ The application's page will automatically update shortly after to reflect the ne
 
 For more information on setting flag values, see the [CloudBees Feature Management documentation](https://docs.cloudbees.io/docs/cloudbees-feature-management/latest/).
 
-# AngularFmExample
+
+
+
+#### AngularFmExample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
