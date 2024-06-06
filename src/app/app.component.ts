@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import Rox from 'rox-ssr';
-import { flags } from "./flags";
+import { Rox } from 'rox-ssr';
+import { flags } from './flags';
 import { CommonModule } from '@angular/common';
 
 
@@ -26,20 +26,21 @@ export class AppComponent {
   fontSize = flags.fontSize
   showMessage = flags.showMessage
 
-
-  ngOnInit() {
-    //     Rox.register('demo', flags)
-    //     this.initFeatureFlags()
+  ngOnChanges() {
     this.applyStyle()
   }
 
-  // initFeatureFlags = async () => {
+  ngOnInit() {
+    this.initFeatureFlags()
+  }
 
-  //   await Rox.setup(this.sdkKey, this.options)
-  // }
+  initFeatureFlags = async () => {
+    Rox.register('demo', flags)
+    Rox.setup(this.sdkKey, this.options)
+  }
 
   applyStyle() {
-    const styles = { 'color': this.fontColor.getValue(), 'size': this.fontSize.getValue() + 'px' };
+    const styles = { 'color': this.fontColor.getValue(), 'font-size': this.fontSize.getValue() + 'px' };
     return styles;
   }
 }
