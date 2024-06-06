@@ -2,7 +2,7 @@
   <div class="content">
     <div class="left-side">
 
-      <h1>Hello, {{ title }}</h1>
+      <h1>{{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
       <hr class="dashed">
 
@@ -15,14 +15,7 @@
       <hr class="dashed">
       <div class="pill-group">
         <p>Flag example:</p>
-        @for (item of [
-        { title: ''},
-        ]; track item.title) {
-        <p class="pill" target="_blank" rel="noopener">
-          <span>{{ "flagValue" }}</span>
-        </p>
-        }
-        
+          <div *ngIf="showMessage.isEnabled() == true" [ngStyle]="applyStyle()">{{ message.getValue() }}</div>   
       </div>
     </div>
   </div>

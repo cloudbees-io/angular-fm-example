@@ -25,6 +25,7 @@
     "express": "^4.18.2",
     "mock-browser": "^0.92.14",
     "rox-browser": "^5.4.12",
+    "rox-ssr": "^5.4.12",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
