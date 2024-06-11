@@ -35,7 +35,7 @@ export class AppComponent {
   }
 
   initFeatureFlags = async () => { 
-    Rox.register('demo', flags)
+    Rox.register(flags)
     await Rox.setup(this.sdkKey, this.options)
   }
 
