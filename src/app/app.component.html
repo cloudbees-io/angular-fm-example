@@ -1,0 +1,24 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+
+      <h1>{{ title }}</h1>
+      <p>Congratulations! Your app is running. 🎉</p>
+      <hr class="dashed"/>
+
+      <p className="access-platform">
+        Login to the CloudBees Platform below to modify flag values and see them update live in this application.
+      </p>
+      <a href="https://cloudbees.io" target="_blank">
+        <img src="../assets/CB-stacked-logo-full-color.svg" alt="cloudbees logo" class="cloudbees-logo">
+      </a>
+      <hr class="dashed"/>
+      <div class="pill-group">
+        <p>Flag example:</p>
+        <div *ngIf="showMessage.isEnabled() == true" [ngStyle]="applyStyle()">{{ message.getValue() }}</div>
+        <div *ngIf="showMessage.isEnabled() == false">Flag Message hidden. Enable the flag in Cloudbees Platform to see it.</div>
+      </div>
+    </div>
+  </div>
+</main>
+<router-outlet />
