@@ -16,9 +16,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Example Angular application for CloudBees Feature Management';
+  title = 'Example Angular application for CloudBees platform feature management';
 
-  sdkKey = '<INSERT YOUR SDK KEY HERE>';
+  sdkKey = '<YOUR-SDK-KEY>';
   options = {};
 
   message = flags.message
