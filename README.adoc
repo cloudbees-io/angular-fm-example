@@ -5,21 +5,28 @@ After integrating, watch the application display change in response to any updat
 
 In the example application, the ROX package is already set up, and feature flags are already coded in.
 
-
 [#add-key]
 == Integrate the example application with the platform
 
 Your SDK key is a link:https://docs.cloudbees.com/docs/cloudbees-platform/latest/feature-management/learn-about-feature-flags[unique environment identifier].
-The SDK key is displayed in the SDK installation instructions in the platform UI.
+
 To successfully install the SDK, you must copy the SDK key for that environment into your application at the Rox setup call, save the file, and run the application.
 
-To save your SDK key in the example application:
+. Get the SDK key: 
+ - Create a CloudBees Feature Management account. See the link:https://cloudbees.io/signup[signup page] to create an account.
 
-. Go to *Feature management* > *Installation* in the platform UI.
-. Select an environment (or create a new one).
-. Select the appropriate SDK.
-. Copy the environment-specific SDK key located within the `Rox.setup` call.
+   - Locate and copy your SDK key:
+     - Navigate to **Feature management > Flags**.
+     - Select an application.
+     - Select the **copy** button next to the SDK key on the page.
 
+   - If the SDK has not been installed:
+     - Navigate to **Feature management > Flags**.
+     - Select **Installation instructions** on the top right-hand corner of the page.
+     - The UI will walk you through:
+       - Creating an environment
+       - Linking the environment to an application
+       - Installing the SDK
 +
 [cols="2a,2a,1a,4a",options="header"]
 .Location of SDK key placeholder in the Angular app
@@ -40,8 +47,8 @@ To save your SDK key in the example application:
 . Replace the example app placeholder (`<YOUR-SDK-KEY>`) with your copied key.
 . Save the file in the repository.
 
-The SDK key is generated for your environment, and copied into the example application.
-To learn more, refer to the SDK installation instructions in the platform UI or in link:https://docs.cloudbees.com/docs/cloudbees-platform/latest/install-sdk/[the documentation].
+The SDK key is generated for your environment and copied into the example application.
+To learn more, refer to the SDK installation instructions in the platform UI or link:https://docs.cloudbees.com/docs/cloudbees-platform/latest/install-sdk/[the documentation].
 
 [#run]
 == Run the application
@@ -101,14 +108,16 @@ To update flags in the platform UI:
 . Update a flag value and save your changes.
 . Switch the *Configuration status* to *On*.
 
-The updated flag value is soon reflected in the display of the application.
+The updated flag value is reflected in the application.
 For more information on setting flag values, refer to the link:https://docs.cloudbees.com/docs/cloudbees-platform/latest/feature-management/configure-feature-flags[flag configuration documentation].
 
 [NOTE]
 ====
 
-This sample application has been generated with link:https://github.com/angular/angular-cli[Angular CLI version 17.3.8].
+This example application has been generated with link:https://github.com/angular/angular-cli[Angular CLI version 17.3.8].
 Run `ng build` to build the project.
 The build artifacts are stored in the `dist/` directory.
 
 ====
+
+Refer to the CloudBees cloud-native platform documentation, link:https://docs.cloudbees.com/docs/cloudbees-platform/latest/install-sdk/[install the Feature management SDK] for more information.
